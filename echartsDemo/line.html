@@ -1,0 +1,203 @@
+﻿
+<html>
+<head>
+<title></title>
+    <script src="http://echarts.baidu.com/build/dist/echarts-all.js"></script>
+</head>
+<body>
+    <div id="main" style="width:900px; height:600px"></div>
+
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts图表  
+        var myChart = echarts.init(document.getElementById('main'));
+        //设置数据  
+        var option = {
+            //设置时间轴
+            timeline: {
+                //时间轴时间列表
+                data: [
+                    '2011-01-01', '2012-01-01', '2013-01-01', '2014-01-01', '2015-01-01'
+                ],
+                //自定义处理，只显示年份
+                label: {
+                    formatter: function (s) {
+                        return s.slice(0, 4);
+                    }
+                },
+                //时间轴的位置设定
+                height: 80,
+                x: 50,
+                padding: [40, 10, 10, 10],
+                //时间轴播放控制
+                autoPlay: true,
+                playInterval: 2000
+            },
+            //设置数据点
+            options: [
+            //2011年数据表
+              {
+                  title: {
+                      text: '2011年农资销量图',
+                      subtext: '纯属捏造'
+                  },
+                  //设置提示  
+                  tooltip: {
+                      show: true
+                  },
+                  //设置图例  
+                  legend: {
+                      data: ['销量']
+                  },
+                  //设置坐标轴  
+                  xAxis: [
+                    {
+                        type: 'category',
+                        data: ["农药", "化肥", "种子", "农膜", "农机", "尿素", "兽药", "其他"],
+                        axisLabel: {
+                            margin: -20,
+                            textStyle: {
+                                color: '#999',
+                                fontWeight: 'bold'
+                            }
+                        }
+                    }
+                  ],
+                  yAxis: [
+                    {
+                        type: 'value'
+                    }
+                  ],
+                  series: [
+                    {
+                        type: 'line',
+                        data: [5, 20, 38, 10, 24, 20, 24, 32],
+                        //绘制平均线  
+                        markLine: {
+                            data: [
+                              { type: 'average', name: '平均值' }
+                            ]
+                        },
+                        //绘制最高最低点  
+                        markPoint: {
+                            data: [
+                              { type: 'max', name: '最大值' },
+                              { type: 'min', name: '最小值' }
+                            ]
+                        }
+                    }
+                  ]
+              },
+              //2012年数据表
+              {
+                  title: {
+                      text: '2012年农资销量图',
+                      subtext: '纯属捏造'
+                  },
+                  series: [
+                    {
+                        type: 'line',
+                        data: [10, 20, 36, 18, 26, 16, 20, 34],
+                        //绘制平均线  
+                        markLine: {
+                            data: [
+                              { type: 'average', name: '平均值' }
+                            ]
+                        },
+                        //绘制最高最低点  
+                        markPoint: {
+                            data: [
+                              { type: 'max', name: '最大值' },
+                              { type: 'min', name: '最小值' }
+                            ]
+                        }
+                    }
+                  ]
+              },
+              //2013年数据表
+              {
+                  title: {
+                      text: '2013年农资销量图',
+                      subtext: '纯属捏造'
+                  },
+                  series: [
+                    {
+                        type: 'line',
+                        data: [10, 16, 38, 22, 30, 18, 22, 32],
+                        //绘制平均线  
+                        markLine: {
+                            data: [
+                              { type: 'average', name: '平均值' }
+                            ]
+                        },
+                        //绘制最高最低点  
+                        markPoint: {
+                            data: [
+                              { type: 'max', name: '最大值' },
+                              { type: 'min', name: '最小值' }
+                            ]
+                        }
+                    }
+                  ]
+              },
+              //2014年数据表
+              {
+                  title: {
+                      text: '2014年农资销量图',
+                      subtext: '纯属捏造'
+                  },
+                  series: [
+                    {
+                        type: 'line',
+                        data: [16, 12, 36, 28, 12, 24, 26, 38],
+                        //绘制平均线  
+                        markLine: {
+                            data: [
+                              { type: 'average', name: '平均值' }
+                            ]
+                        },
+                        //绘制最高最低点  
+                        markPoint: {
+                            data: [
+                              { type: 'max', name: '最大值' },
+                              { type: 'min', name: '最小值' }
+                            ]
+                        }
+                    }
+                  ]
+              },
+              //2015年数据表
+              {
+                  title: {
+                      text: '2015年农资销量图',
+                      subtext: '纯属捏造'
+                  },
+                  series: [
+                    {
+                        type: 'line',
+                        data: [26, 18, 38, 28, 14, 22, 28, 35],
+                        //绘制平均线  
+                        markLine: {
+                            data: [
+                              { type: 'average', name: '平均值' }
+                            ]
+                        },
+                        //绘制最高最低点  
+                        markPoint: {
+                            data: [
+                              { type: 'max', name: '最大值' },
+                              { type: 'min', name: '最小值' }
+                            ]
+                        }
+                    }
+                  ]
+              }
+            ]
+        };
+
+        // 为echarts对象加载数据   
+        myChart.setOption(option);
+
+    </script>
+
+</body>
+</html>
